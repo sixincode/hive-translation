@@ -3,8 +3,9 @@
 return [
     'default_route'    => 'lang',
     'fallback_lang'    => 'en',
-    'langSwitchSource'     => 'elements.langSwitch',
-    'defaultLangswitch'    => 'defaultLangSwitch',
+    'langSwitchSource'    => 'elements.langSwitch',
+    'defaultLangSwitch'   => 'defaultLangSwitch',
+    'defaultViewsBase'    => 'hive-translation::components',
     // Uncomment the languages that your site supports - or add new ones.
     // These are sorted by the native name, which is the order you might show them in a language selector.
     // Regional languages are sorted by their base language, so "British English" sorts as "English, British"

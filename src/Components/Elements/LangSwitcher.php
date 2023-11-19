@@ -4,20 +4,20 @@ namespace Sixincode\HiveTranslation\Components\Elements;
 
 use Sixincode\HiveDisplay\Components\Base\CardTemplateElement;
 
-class LangSwitch extends CardTemplateElement
+class LangSwitcher extends CardTemplateElement
 {
     public function setDefaultSource()
     {
-      return $this->source = config('hive-display.defaultViews.langSwitchSource');
+      return $this->source = config('hive-translation.langSwitchSource');
     }
 
     public function setDefaultComponent()
     {
-      return $this->component = config('hive-display.defaultViews.defaultLangSwitch');
+      return $this->component = config('hive-translation.defaultLangSwitch');
     }
 
     public function setDefaultBase()
     {
-      return $this->base = config('hive-display.defaultViewsBase');
+      return $this->base = config('hive-translation.defaultViewsBase');
     }
 }

@@ -25,7 +25,7 @@ class HiveTranslationServiceProvider extends PackageServiceProvider
             ->hasAssets()
             ->hasTranslations()
             // ->hasIcons()
-            // ->hasBladeComponents()
+            ->hasBladeComponents()
             // ->hasLayouts()
             ->hasRoutes(['web','api'])
             ->hasMigration('create_hive-translation_table')
@@ -36,4 +36,13 @@ class HiveTranslationServiceProvider extends PackageServiceProvider
             // ->runsMigrations()
             ->hasCommand(HiveTranslationCommand::class);
     }
+
+    public function bootingPackage()
+    {
+        $this->loadTranslationsFrom($this->package->basePath("/../resources/lang"), "#");
+
+        $this->publishes([
+          $this->package->basePath("/../resources/lang") => $this->app->langPath("vendor/{$this->package->shortName()}"),
+        ]);
+     }
 }

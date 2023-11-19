@@ -9,7 +9,7 @@ class FindLocale
   public function handle($request, Closure $next)
       {
           if(
-              (!session('language')) &&  ($request->getPreferredLanguage() && array_key_exists(  substr($request->getPreferredLanguage(),0,2), check_locale_langs() ))
+              (!session('language')) &&  ($request->getPreferredLanguage() && in_array(substr($request->getPreferredLanguage(),0,2), check_locale_langs() ))
             )
           {
              session()->put('language', substr($request->getPreferredLanguage(),0,2));
